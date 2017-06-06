@@ -50,7 +50,7 @@ class BaseProvider extends AbstractProvider
      * This should only be the scopes that are required to request the details
      * of the resource owner, rather than all the available scopes.
      *
-     * @return array
+     * @return string[]
      */
     protected function getDefaultScopes()
     {
