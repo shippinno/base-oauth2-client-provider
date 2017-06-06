@@ -1,5 +1,5 @@
 {
-  "name": "wagghq/oauth2-base",
+  "name": "shippinno/oauth2-base",
   "description": "BASE OAuth 2.0 Client Provider for The PHP League OAuth2-Client",
   "type": "library",
   "license": "MIT",
