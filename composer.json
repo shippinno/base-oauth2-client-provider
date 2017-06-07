@@ -5,6 +5,11 @@
   "license": "MIT",
   "authors": [
     {
+      "name": "Hirofumi Tanigami",
+      "email": "hirofumi.tanigami@shippinno.co.jp",
+      "role": "Developer"
+    },
+    {
       "name": "Tadashi Gondo",
       "email": "tadashi.gondo@shippinno.co.jp",
       "role": "Developer"
@@ -22,11 +27,6 @@
     {
       "name": "Aya Kanazawa",
       "email": "ayazarashi@gmail.com",
-      "role": "Developer"
-    },
-    {
-      "name": "Hirofumi Tanigami",
-      "email": "tanigami@shippinno.co.jp",
       "role": "Developer"
     }
   ],
