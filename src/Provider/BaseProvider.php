@@ -108,6 +108,6 @@ class BaseProvider extends AbstractProvider
      */
     protected function getScopeSeparator()
     {
-        return '+';
+        return ' ';
     }
 }
