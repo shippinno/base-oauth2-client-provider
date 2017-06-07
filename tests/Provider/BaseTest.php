@@ -85,7 +85,6 @@ class BaseTest extends TestCase
     {
         $shopId = uniqid();
         $shopName = uniqid();
-        $shopId = uniqid();
         $postResponse = Mockery::mock(ResponseInterface::class);
         $postResponse->shouldReceive('getBody')->andReturn('access_token=mock_access_token&expires=3600&refresh_token=mock_refresh_token');
         $postResponse->shouldReceive('getHeader')->andReturn(['content-type' => 'application/x-www-form-urlencoded']);
