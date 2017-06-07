@@ -99,4 +99,15 @@ class BaseProvider extends AbstractProvider
     {
         return array('Authorization' => 'Bearer '.$token->getToken());
     }
+
+    /**
+     * Returns the string that should be used to separate scopes when building
+     * the URL for requesting an access token.
+     *
+     * @return string Scope separator
+     */
+    protected function getScopeSeparator()
+    {
+        return '+';
+    }
 }
