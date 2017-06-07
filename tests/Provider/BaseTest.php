@@ -102,6 +102,7 @@ class BaseTest extends TestCase
         $account = $this->provider->getResourceOwner($token);
 
         $this->assertEquals($shopId, $account->getId());
+        $this->assertEquals($shopName, $account->getShopName());
         $this->assertEquals($shopId, $account->toArray()['user']['shop_id']);
     }
 }

@@ -24,11 +24,21 @@ class BaseResourceOwner implements ResourceOwnerInterface
     /**
      * Returns the identifier of the authorized resource owner.
      *
-     * @return mixed
+     * @return string
      */
     public function getId()
     {
         return $this->response['user']['shop_id'];
+    }
+
+    /**
+     * Returns the shop name.
+     *
+     * @return string
+     */
+    public function getShopName()
+    {
+        return $this->response['user']['shop_name'];
     }
 
     /**
