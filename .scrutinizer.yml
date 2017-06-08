@@ -12,3 +12,7 @@ build:
                     file: 'build/coverage/log/coverage.xml'
                     format: 'clover'
             - phpcs-run --ignore=*/tests/*
+            
+filter:
+    excluded_paths:
+        - "tests/"
