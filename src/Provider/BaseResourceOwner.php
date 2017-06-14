@@ -3,9 +3,12 @@
 namespace Shippinno\Base\OAuth2\Client\Provider;
 
 use League\OAuth2\Client\Provider\ResourceOwnerInterface;
+use League\OAuth2\Client\Tool\ArrayAccessorTrait;
 
 class BaseResourceOwner implements ResourceOwnerInterface
 {
+    use ArrayAccessorTrait;
+
     /**
      * Raw response
      *
@@ -28,7 +31,7 @@ class BaseResourceOwner implements ResourceOwnerInterface
      */
     public function getId()
     {
-        return $this->response['user']['shop_id'];
+        return $this->getValueByKey($this->response, 'user.shop_id');
     }
 
     /**
@@ -38,7 +41,7 @@ class BaseResourceOwner implements ResourceOwnerInterface
      */
     public function getShopName()
     {
-        return $this->response['user']['shop_name'];
+        return $this->getValueByKey($this->response, 'user.shop_name');
     }
 
     /**
