@@ -6,10 +6,13 @@ use League\OAuth2\Client\Provider\AbstractProvider;
 use League\OAuth2\Client\Provider\Exception\IdentityProviderException;
 use League\OAuth2\Client\Provider\ResourceOwnerInterface;
 use League\OAuth2\Client\Token\AccessToken;
+use League\OAuth2\Client\Tool\BearerAuthorizationTrait;
 use Psr\Http\Message\ResponseInterface;
 
 class BaseProvider extends AbstractProvider
 {
+    use BearerAuthorizationTrait;
+
     /**
      * Returns the base URL for authorizing a client.
      *
@@ -87,17 +90,6 @@ class BaseProvider extends AbstractProvider
     protected function createResourceOwner(array $response, AccessToken $token)
     {
         return new BaseResourceOwner($response);
-    }
-
-    /**
-     * Returns the authorization headers used by this provider.
-     *
-     * @param  mixed|null $token Either a string or an access token instance
-     * @return array
-     */
-    public function getAuthorizationHeaders($token = null)
-    {
-        return array('Authorization' => 'Bearer '.$token->getToken());
     }
 
     /**
