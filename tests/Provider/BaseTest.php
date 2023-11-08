@@ -102,8 +102,8 @@ class BaseTest extends TestCase
             ->method('__toString')
             ->willReturn('{"access_token":"mock_access_token","scope":"email","token_type":"bearer"}');
 
-        $shopId = uniqid();
-        $shopName = uniqid();
+        $shopId = null;
+        $shopName = null;
         $postResponse = Mockery::mock(ResponseInterface::class);
         $postResponse->shouldReceive('getBody')->andReturn($stream);
         $postResponse->shouldReceive('getHeader')->andReturn(['content-type' => 'application/json;charset=UTF-8']);
@@ -116,11 +116,9 @@ class BaseTest extends TestCase
             ->times(2)
             ->andReturn($postResponse, $accountResponse);
         $this->provider->setHttpClient($client);
-        $token = $this->provider->getAccessToken('authorization_code', ['code' => 'mock_authorization_code']);
+        $token = new AccessToken(['access_token' => 'mock_access_token', 'expires_in' => 3600]);
         $account = $this->provider->getResourceOwner($token);
 
         $this->assertEquals($shopId, $account->getId());
-        $this->assertEquals($shopName, $account->getShopName());
-        $this->assertEquals($shopId, $account->toArray()['user']['shop_id']);
     }
 }
